@@ -1,16 +1,27 @@
 import React from "react";
 
 export const MainButton = (props: propsType) => {
-  const { children = "Book a discovery call", type = "button" } = props;
+  const {
+    children = "Book a discovery call",
+    as = "button",
+    className,
+  } = props;
 
-  return type === "button" ? (
-    <button>{children}</button>
+  return as === "button" ? (
+    <button className={"rounded-full px-6 py-2 " + className}>
+      {children}
+    </button>
   ) : (
-    type === "a" && <a href="#">{children}</a>
+    as === "a" && (
+      <a className={"rounded-full px-6 py-2 " + className} href="#">
+        {children}
+      </a>
+    )
   );
 };
 
 type propsType = {
   children?: React.ReactNode;
-  type?: "button" | "a";
-};
+  className?: string;
+  as?: "button" | "a";
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;

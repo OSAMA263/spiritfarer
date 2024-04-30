@@ -7,12 +7,10 @@ type PropsType = {
 };
 
 export const Section = ({ children, ...rest }: PropsType) => {
-  return <Container {...rest}>{children}</Container>;
+  return <Container className="container-layout" {...rest}>{children}</Container>;
 };
 
 const Container = tw.section`
-text-white
-w-[70%]
-mx-auto
 [&_img]:rounded-lg
+container-layout
 `;

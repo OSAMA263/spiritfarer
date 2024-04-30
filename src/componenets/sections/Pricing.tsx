@@ -2,76 +2,67 @@ import React from "react";
 import tw from "tailwind-styled-components";
 import { SectionHeader } from "../SectionHeader";
 import { MainButton } from "../MainButton";
+import { Section } from "../../shared/Section";
+import { PricingData } from "../../utilities/staticData";
+import { List, ListIcon, ListItem } from "@chakra-ui/react";
+import { MdCheck } from "react-icons/md";
 
 export const Pricing = () => {
   return (
-    <div>
+    <Section id="pricing">
       <SectionHeader title="Pricing" header="Ready to get started?" />
-      <div className="grid gap-10">
-        {cardData.map(({ title, price, headingBold, bg }) => (
-          <PricingCard key={title} {...{ title, price, headingBold, bg }} />
+      <div className="grid grid-cols-2 gap-10">
+        {PricingData.map((data) => (
+          <PricingCard key={data.title} {...data} />
         ))}
       </div>
-    </div>
+    </Section>
   );
 };
 
 const PricingCard = (props: cardDataProps) => {
-  const { title, price, headingBold, bg } = props;
+  const { title, price, headingBold, features, bg } = props;
   return (
-    <div className="grid gap-8">
-      <CardContainer bg={bg}>
-        <div>
-          <span>{title}</span>
-          <h1>${price}</h1>
-        </div>
-        <ul>
-          <li>Lorem ipsum dolor sit amet.</li>
-          <li>Lorem ipsum dolor sit amet.</li>
-          <li>Lorem ipsum dolor sit amet.</li>
-          <li>Lorem ipsum dolor sit amet.</li>
-        </ul>
-        <div>
-          <h1>{headingBold} </h1>
-          <MainButton />
-        </div>
-      </CardContainer>
-    </div>
+    <CardContainer bg={bg}>
+      <div>
+        <span className="text-2xl">{title}</span>
+        <h1 className="text-5xl">${price}</h1>
+      </div>
+      <List>
+        {features.map((feature) => (
+          <ListItem key={feature}>
+            <ListIcon as={MdCheck} /> {feature}
+          </ListItem>
+        ))}
+      </List>
+
+      <div>
+        <h1 className="font-bold text-lg">{headingBold}</h1>
+        <MainButton />
+      </div>
+    </CardContainer>
   );
 };
 
 const CardContainer = tw.div<{ bg: string }>`
-${({ bg }) =>
-  bg === "white"
-    ? "text-black bg-white [&_button]:text-white [&_button]:bg-black"
-    : "text-white bg-black [&_button]:text-black [&_button]:bg-white"}
 p-10
-rounded-lg
-flex 
+rounded-xl
+flex
 flex-col
 justify-between
-*:space-y-3
+*:space-y-10
+*:py-4
 divide-y
+${({ bg }) =>
+  bg === "white"
+    ? "text-black bg-gray-100 [&_button]:text-white [&_button]:bg-black divide-black"
+    : "text-white bg-black [&_button]:text-black [&_button]:bg-white divide-white"}
 `;
-
-const cardData: cardDataProps[] = [
-  {
-    title: "Individuals",
-    price: 699,
-    headingBold: "Unlock your inner innovation hero",
-    bg: "white",
-  },
-  {
-    title: "Team",
-    price: 6969,
-    headingBold: "Transform your team into a design sprint powerhouse",
-    bg: "black",
-  },
-];
 
 type cardDataProps = {
   title: string;
   price: number;
   headingBold: string;
   bg: string;
+  features: string[];
 };

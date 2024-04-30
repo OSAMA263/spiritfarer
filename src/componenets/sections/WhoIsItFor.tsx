@@ -1,21 +1,22 @@
 import React from "react";
 import tw from "tailwind-styled-components";
 import { SectionHeader } from "../SectionHeader";
-import { ImBooks, ImDatabase, ImContrast } from "react-icons/im";
+import { Section } from "../../shared/Section";
+import { CardsData } from "../../utilities/staticData";
 
 export const WhoIsItFor = () => {
   return (
-    <div>
+    <Section id="who-is-it-for">
       <SectionHeader
-        header="Who are our courses for?"
-        title="Facilitation & Workshopping Training"
+        title="Who are our courses for?"
+        header="Facilitation & Workshopping Training"
       />
       <div className="grid grid-cols-3 gap-6">
-        {cardsData.map((card) => (
+        {CardsData.map((card) => (
           <CourseCard key={card.title} {...card} />
         ))}
       </div>
-    </div>
+    </Section>
   );
 };
 
@@ -23,45 +24,26 @@ const CourseCard = (props: CourseCardType) => {
   const { bg, Icon, title, par } = props;
   return (
     <Card style={{ backgroundColor: bg }}>
-      <span>
+      <span className="text-5xl">
         <Icon />
       </span>
-      <div className="space-y-6 divide-y">
-        <h1>{title}</h1>
-        <p className="mt-4">{par}</p>
+      <div className="space-y-6 divide-y-2 divide-black">
+        <h1 className="text-3xl">{title}</h1>
+        <p className="pt-4">{par}</p>
       </div>
     </Card>
   );
 };
 
 const Card = tw.div`
-rounded-lg
-p-8
+rounded-xl
+p-10
 flex
 flex-col
 justify-between
+gap-28
 `;
 
-const cardsData = [
-  {
-    Icon: ImContrast,
-    title: "Startups & Small businesses",
-    par: "Reduced time to marketImproved product qualityIncreased stakeholder buy-in",
-    bg: "#e1efe3",
-  },
-  {
-    Icon: ImBooks,
-    title: "Individual Employees",
-    par: "Improved team collaborationEnhanced problem-solving skillsDeveloped rapid prototyping skills",
-    bg: "#efe1ff",
-  },
-  {
-    Icon: ImDatabase,
-    title: "Consultants & Coaches",
-    par: "ncreased client satisfactionEnhanced credibilityImproved profitability",
-    bg: "#dae4fb",
-  },
-];
 type CourseCardType = {
   Icon: React.ComponentType;
   title: string;

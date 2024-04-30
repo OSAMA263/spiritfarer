@@ -1,63 +1,53 @@
 import React from "react";
 import tw from "tailwind-styled-components";
 import { SectionHeader } from "../SectionHeader";
+import { Section } from "../../shared/Section";
+import { WorkflowGrid } from "../../utilities/staticData";
 
 export const Workflow = () => {
   return (
-    <div>
+    <Section id="workflow">
       <SectionHeader
-        header="Workflow"
-        title="Embark on your design sprint journey"
+        title="Workflow"
+        header="Embark on your design sprint journey"
       />
-      <div className="space-y-12">
-        {data.map(({ img, title }, i) => (
-          <GridTextImage key={title} {...{ img, title, i }} />
+      <div className="space-y-20">
+        {WorkflowGrid.map(({ img, title, text }, i) => (
+          <GridTextImage key={title} {...{ img, title, text, i }} />
         ))}
       </div>
-    </div>
+    </Section>
   );
 };
 
 const GridTextImage = (props: DataType) => {
-  const { img, title, i } = props;
+  const { img, title, text, i } = props;
   return (
     <GridContainer i={i}>
-      <div className="flex-1 rounded-xl ">
+      <div className="rounded-xl flex-1">
         <img src={img} className="w-full" alt={title} />
       </div>
-      <div className="flex-1">
-        <div>
-          <h1 className="mb-6">
-            Day {i && i + 1} : {title}
-          </h1>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Voluptatibus nemo neque voluptatem eum sequi dolorem aperiam
-            cupiditate alias impedit consectetur rem, voluptatum qui molestiae
-            doloremque!
-          </p>
-        </div>
+      <div className="space-y-6 text-balance flex-1">
+        <h1 className="text-3xl">
+          Day {i !== undefined ? i + 1 : 1} : {title}
+        </h1>
+        <p className="text-lg">{text}</p>
       </div>
     </GridContainer>
   );
 };
 
 const GridContainer = tw.div<{ i: number | undefined }>`
-${({ i }) => (i && (i + 1) % 2 === 0 ? "flex-row" : "flex-row-reverse")}
+${({ i }) => (i && (i + 1) % 2 === 0 ? "flex-row-reverse" : "flex-row")}
 flex
 items-center
-gap-12
+gap-x-[8%]
+justify-between
 `;
-
-const data: DataType[] = [
-  { img: "/workflow/img0.webp", title: "Problem Exploration" },
-  { img: "/workflow/img1.webp", title: "Ideation Extravaganza" },
-  { img: "/workflow/img2.webp", title: "Prototype Power Hour" },
-  { img: "/workflow/img3.webp", title: "Validate Your Ideas" },
-];
 
 type DataType = {
   img: string;
   title: string;
+  text: string;
   i?: number;
 };
