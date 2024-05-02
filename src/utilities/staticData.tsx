@@ -3,27 +3,27 @@ import { ImBooks, ImDatabase, ImContrast } from "react-icons/im";
 const NavigationLinks = [
   {
     name: "What We Do",
-    link: "#what-we-do",
+    link: "what-we-do",
   },
   {
     name: "Who Is It For",
-    link: "#who-is-it-for",
+    link: "who-is-it-for",
   },
   {
     name: "Workflow",
-    link: "#workflow",
+    link: "workflow",
   },
   {
     name: "Pricing",
-    link: "#pricing",
+    link: "pricing",
   },
   {
     name: "Students",
-    link: "#students",
+    link: "students",
   },
   {
     name: "FAQ",
-    link: "#faq",
+    link: "faq",
   },
 ];
 // -------------who is it for
