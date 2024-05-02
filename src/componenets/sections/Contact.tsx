@@ -2,17 +2,20 @@ import React from "react";
 import { SectionHeader } from "../SectionHeader";
 import { MainButton } from "../MainButton";
 import { motion } from "framer-motion";
+import { RevealElement } from "../../utilities/RevealElement";
 export const Contact = () => {
   return (
     <section id="contact">
-      <motion.div {...AnimateBG} className="py-32">
-        <SectionHeader
-          title="Let us know how we can help!"
-          header="We'll get back to you within 2-3 million days :)"
-          className="mx-auto text-center"
-        />
-        <div>
-          <form action="#" className="mx-auto w-[40%] space-y-4 *:space-y-2">
+      <motion.div className="md:py-32 py-16">
+        <RevealElement>
+          <SectionHeader
+            title="Let us know how we can help!"
+            header="We'll get back to you within 2-3 million days :)"
+            className="mx-auto text-center"
+          />
+        </RevealElement>
+        <RevealElement>
+          <form action="#" className="mx-auto md:w-[40%] w-[80%] space-y-4 *:space-y-2">
             <div>
               <label htmlFor="email"> Email</label>
               <input
@@ -40,7 +43,7 @@ export const Contact = () => {
               Get Started
             </MainButton>
           </form>
-        </div>
+        </RevealElement>
       </motion.div>
     </section>
   );

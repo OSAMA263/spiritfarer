@@ -133,6 +133,23 @@ const ReviewsData = [
     color: "#f19938",
   },
 ];
+// -------------footer
+const FooterLinks = [
+  [
+    { link: "/", text: "Home" },
+    { link: "#what-we-do", text: "What we do" },
+    { link: "#who-is-it-for", text: "Who is it for" },
+  ],
+  [
+    { link: "#workflow", text: "Workflow" },
+    { link: "#pricing", text: "Pricing" },
+    { link: "#students", text: "Students" },
+  ],
+  [
+    { link: "#faq", text: "FAQ" },
+    { link: "#contact", text: "Contact" },
+  ],
+];
 export {
   LogosData,
   SliderImgsData,
@@ -140,4 +157,5 @@ export {
   WorkflowGrid,
   PricingData,
   ReviewsData,
+  FooterLinks,
 };

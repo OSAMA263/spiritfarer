@@ -27,11 +27,11 @@ body {
     }
   }
   img {
-    max-width: 100%;
+    max-width: 100%!important;
     object-fit: cover;
   }
 }
 // global classes-------------
 .container-layout {
-  @apply mx-auto w-[70%] min-h-[80dvh];
+  @apply mx-auto 2xl:w-[70%] xl:w-[80%] md:w-[90%] w-[95%] lg:min-h-[80dvh];
 }

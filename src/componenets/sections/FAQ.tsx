@@ -9,38 +9,43 @@ import {
 import tw from "tailwind-styled-components";
 import { MainButton } from "../MainButton";
 import { Section } from "../../shared/Section";
+import { RevealElement } from "../../utilities/RevealElement";
 
 export const FAQ = () => {
   return (
     <Section id="faq">
-      <SectionHeader
-        header="All you want to know about the training"
-        title="FAQ"
-      />
-      <div className="flex justify-between items-center gap-24">
-        {/* accordion question & answers */}
-        <Accordion allowToggle className="w-full space-y-4">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <AccordionItem key={i}>
-              {({ isExpanded }) => (
-                <>
-                  <AccordionButton className="flex flex-col text-start justify-between p-4 rounded-2xl bg-[#e8e8e8]">
-                    <AccordionIcon isExpanded={isExpanded} />
-                    <AccordionPanel mt={20}>
-                      consectetur adipisicing elit. Numquam maiores repellat
-                      quas eius, eligendi aperiam ea modi possimus et, ullam
-                      quae. Sint, amet eos et autem dolorem repudiandae commodi
-                      odit?
-                    </AccordionPanel>
-                  </AccordionButton>
-                </>
-              )}
-            </AccordionItem>
-          ))}
-        </Accordion>
-        {/* card on the right */}
-        <SmallCard />
-      </div>
+      <RevealElement>
+        <SectionHeader
+          header="All you want to know about the training"
+          title="FAQ"
+        />
+      </RevealElement>
+      <RevealElement>
+        <div className="flex max-lg:flex-col justify-between items-center gap-24">
+          {/* accordion question & answers */}
+          <Accordion allowToggle className="w-full space-y-4">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <AccordionItem key={i}>
+                {({ isExpanded }) => (
+                  <>
+                    <AccordionButton className="flex flex-col text-start justify-between p-4 rounded-2xl bg-[#e8e8e8]">
+                      <AccordionIcon isExpanded={isExpanded} />
+                      <AccordionPanel mt={20}>
+                        consectetur adipisicing elit. Numquam maiores repellat
+                        quas eius, eligendi aperiam ea modi possimus et, ullam
+                        quae. Sint, amet eos et autem dolorem repudiandae
+                        commodi odit?
+                      </AccordionPanel>
+                    </AccordionButton>
+                  </>
+                )}
+              </AccordionItem>
+            ))}
+          </Accordion>
+          {/* card on the right */}
+          <SmallCard />
+        </div>
+      </RevealElement>
     </Section>
   );
 };
@@ -54,7 +59,7 @@ const SmallCard = () => {
         Shaan Livy
       </h1>
       <span>Fonder of Sprintify</span>
-      <MainButton className="bg-white text-black"/>
+      <MainButton className="bg-white text-black" />
     </Card>
   );
 };

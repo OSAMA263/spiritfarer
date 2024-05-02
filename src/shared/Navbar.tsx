@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useEffect, useState } from "react";
 import tw from "tailwind-styled-components";
 import { MainButton } from "../componenets/MainButton";
 import { motion } from "framer-motion";
@@ -7,11 +7,16 @@ import { useLocation } from "react-router";
 export const Navbar = () => {
   const [activeLink, setActiveLink] = useState("");
   const { hash } = useLocation();
-
+  useEffect(() => {
+    setActiveLink(hash);
+  }, [hash]);
   return (
     <div className="sticky top-2 z-[69696969]">
       <Header>
-        <a href="#/" className="text-2xl font-bold ms-4">LOGO</a>
+        <a href="#/" className="text-2xl font-bold ms-4">
+          LOGO
+        </a>
+        
         <nav className="flex items-center gap-6">
           <ul className="flex items-center gap-4">
             {navigateLinks.map(({ name, link }) => (

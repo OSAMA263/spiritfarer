@@ -6,16 +6,21 @@ import { Section } from "../../shared/Section";
 import { PricingData } from "../../utilities/staticData";
 import { List, ListIcon, ListItem } from "@chakra-ui/react";
 import { MdCheck } from "react-icons/md";
+import { RevealElement } from "../../utilities/RevealElement";
 
 export const Pricing = () => {
   return (
     <Section id="pricing">
-      <SectionHeader title="Pricing" header="Ready to get started?" />
-      <div className="grid grid-cols-2 gap-10">
-        {PricingData.map((data) => (
-          <PricingCard key={data.title} {...data} />
-        ))}
-      </div>
+      <RevealElement>
+        <SectionHeader title="Pricing" header="Ready to get started?" />
+      </RevealElement>
+      <RevealElement>
+        <div className="grid lg:grid-cols-2 gap-10">
+          {PricingData.map((data) => (
+            <PricingCard key={data.title} {...data} />
+          ))}
+        </div>
+      </RevealElement>
     </Section>
   );
 };
@@ -26,16 +31,15 @@ const PricingCard = (props: cardDataProps) => {
     <CardContainer bg={bg}>
       <div>
         <span className="text-2xl">{title}</span>
-        <h1 className="text-5xl">${price}</h1>
+        <h1 className="sm:text-5xl text-3xl">${price}</h1>
       </div>
-      <List>
+      <List className="max-sm:!space-y-2">
         {features.map((feature) => (
           <ListItem key={feature}>
             <ListIcon as={MdCheck} /> {feature}
           </ListItem>
         ))}
       </List>
-
       <div>
         <h1 className="font-bold text-lg">{headingBold}</h1>
         <MainButton />
@@ -50,7 +54,8 @@ rounded-xl
 flex
 flex-col
 justify-between
-*:space-y-10
+*:sm:space-y-10
+*:space-y-4
 *:py-4
 divide-y
 ${({ bg }) =>

@@ -1,44 +1,51 @@
 import React from "react";
 import tw from "tailwind-styled-components";
 import {
-  RiProhibitedLine ,
-  RiSettings4Line  ,
-  RiShieldCheckLine ,
+  RiProhibitedLine,
+  RiSettings4Line,
+  RiShieldCheckLine,
   RiVipDiamondLine,
 } from "react-icons/ri";
 
 import { Section } from "../../shared/Section";
+import { RevealElement } from "../../utilities/RevealElement";
 
 export const Hero = () => {
   return (
     <Section id="/" className="pt-0">
-      <Container>
-        {/* text */}
-        <div className="flex text-balance flex-col justify-around">
-          <div className="space-y-8">
-            <h1 className="text-7xl font-semibold">
-              Facilitation & Design sprint bootcamps
-            </h1>
-            <p className="text-gray-500">
-              Transform your ideas into reality in just 5 days (and HAVE FUN
-              doing it)
-            </p>
+      <RevealElement>
+        <Container>
+          {/* text */}
+          <div className="flex text-balance gap-10 flex-col justify-around">
+            <div className="space-y-8">
+              <h1 className="md:text-7xl text-6xl max-md:font-semibold">
+                Facilitation & Design sprint bootcamps
+              </h1>
+              <p className="text-gray-500">
+                Transform your ideas into reality in just 5 days (and HAVE FUN
+                doing it)
+              </p>
+            </div>
+            {/* badges */}
+            <div className="flex flex-wrap gap-3">
+              {badges.map(({ Icon, title, bg }) => (
+                <Badge bg={bg} key={title}>
+                  <Icon />
+                  {title}
+                </Badge>
+              ))}
+            </div>
           </div>
-          {/* badges */}
-          <div className="flex flex-wrap gap-3">
-            {badges.map(({ Icon, title, bg }) => (
-              <Badge bg={bg} key={title}>
-                <Icon />
-                {title}
-              </Badge>
-            ))}
+          {/* right image */}
+          <div className="ms-auto max-lg:w-full max-lg:h-[600px]">
+            <img
+              src="/hero-img.webp"
+              className="w-full h-full bg-top"
+              alt="hero-image"
+            />
           </div>
-        </div>
-        {/* right image */}
-        <div className="ms-auto w-[500px] h-[600px]">
-          <img src="/hero-img.webp" alt="hero-image" />
-        </div>
-      </Container>
+        </Container>
+      </RevealElement>
     </Section>
   );
 };
@@ -48,7 +55,7 @@ const Badge = (props: BadgePropsType) => {
   return (
     <span
       style={{ backgroundColor: bg }}
-      className="rounded-2xl px-2 flex gap-4 items-center"
+      className="rounded-2xl px-2 flex gap-4 items-center max-sm:text-sm"
     >
       {children}
     </span>
@@ -56,25 +63,26 @@ const Badge = (props: BadgePropsType) => {
 };
 
 const Container = tw.div`
-grid
-grid-cols-2
+lg:grid
+lg:grid-cols-2
+space-y-10
 w-full
 justify-between
 `;
 
 const badges: badgesType[] = [
   {
-    Icon: RiSettings4Line  ,
+    Icon: RiSettings4Line,
     title: "Tailored Curriculum",
     bg: "#fffbdc",
   },
   {
-    Icon: RiProhibitedLine ,
+    Icon: RiProhibitedLine,
     title: "Industry-Recognized Certification",
     bg: "#e1efe3",
   },
   {
-    Icon: RiShieldCheckLine ,
+    Icon: RiShieldCheckLine,
     title: "Practical, Actionable Learning",
     bg: "#efe1ff",
   },
