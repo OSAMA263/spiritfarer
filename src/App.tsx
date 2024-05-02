@@ -12,23 +12,26 @@ import { Contact } from "./componenets/sections/Contact";
 
 function App() {
   return (
-    <Container>
+    <>
       <Navbar />
-      <Hero />
-      <WhatWeDo />
-      <WhoIsItFor />
-      <Workflow />
-      <Pricing />
-      <Students />
-      <FAQ />
-      <Contact />
+      <Container>
+        <Hero />
+        <WhatWeDo />
+        <WhoIsItFor />
+        <Workflow />
+        <Pricing />
+        <Students />
+        <FAQ />
+        <Contact />
+      </Container>
       <Footer />
-    </Container>
+    </>
   );
 }
 
 const Container = tw.div`
-space-y-28
+sm:space-y-28
+space-y-10
 `;
 
 export default App;

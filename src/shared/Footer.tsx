@@ -7,9 +7,12 @@ export const Footer = () => {
     <FooterContainer>
       <div className="container-layout !min-h-full">
         <div className="sm:flex justify-between max-sm:space-y-6 mb-20">
-          <a href="#/" className="text-2xl font-bold">
-            LOGO
-          </a>
+          <div>
+            <a href="#/" className="text-2xl font-bold">
+              <img src="/logo.svg" alt="logo" />
+            </a>
+            <h1>Unleash the power of design sprints.</h1>
+          </div>
           <nav className="flex gap-20">
             {FooterLinks.map((col, i) => (
               <ul className="sm:space-y-3" key={i}>

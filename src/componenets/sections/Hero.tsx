@@ -12,7 +12,7 @@ import { RevealElement } from "../../utilities/RevealElement";
 
 export const Hero = () => {
   return (
-    <Section id="/" className="pt-0">
+    <Section id="/" className="max-lg:pt-20">
       <RevealElement>
         <Container>
           {/* text */}

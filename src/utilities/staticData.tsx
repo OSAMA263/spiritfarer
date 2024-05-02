@@ -1,5 +1,31 @@
 import { ImBooks, ImDatabase, ImContrast } from "react-icons/im";
-
+// ------------navabr
+const NavigationLinks = [
+  {
+    name: "What We Do",
+    link: "#what-we-do",
+  },
+  {
+    name: "Who Is It For",
+    link: "#who-is-it-for",
+  },
+  {
+    name: "Workflow",
+    link: "#workflow",
+  },
+  {
+    name: "Pricing",
+    link: "#pricing",
+  },
+  {
+    name: "Students",
+    link: "#students",
+  },
+  {
+    name: "FAQ",
+    link: "#faq",
+  },
+];
 // -------------who is it for
 const CardsData = [
   {
@@ -158,4 +184,5 @@ export {
   PricingData,
   ReviewsData,
   FooterLinks,
+  NavigationLinks,
 };
