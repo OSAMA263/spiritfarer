@@ -13,8 +13,8 @@ export const Students = () => {
     speed: 700,
     effect: "fade",
     modules: [EffectFade, Autoplay],
-    // loop:true,
-    // autoplay: { delay: 2500, disableOnInteraction:false},
+    loop:true,
+    autoplay: { delay: 2500, disableOnInteraction:false},
     centeredSlides: true,
   };
   return (

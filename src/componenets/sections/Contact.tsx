@@ -6,7 +6,7 @@ import { RevealElement } from "../../utilities/RevealElement";
 export const Contact = () => {
   return (
     <section id="contact">
-      <motion.div className="md:py-32 py-16">
+      <motion.div {...AnimateBG} className="md:py-32 py-16">
         <RevealElement>
           <SectionHeader
             title="Let us know how we can help!"
