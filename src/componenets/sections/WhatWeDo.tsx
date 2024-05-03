@@ -124,7 +124,7 @@ const SliderImages = () => {
                   src={img}
                   alt={img}
                   key={img + j}
-                  className="rounded-xl max-sm:h-[25vh]"
+                  className="rounded-xl max-sm:h-[25vh] h-full"
                 />
               ))}
             </motion.div>

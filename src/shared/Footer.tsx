@@ -1,6 +1,7 @@
 import React from "react";
 import tw from "tailwind-styled-components";
 import { FooterLinks } from "../utilities/staticData";
+import { Link } from "react-scroll";
 
 export const Footer = () => {
   return (
@@ -18,7 +19,9 @@ export const Footer = () => {
               <ul className="sm:space-y-3" key={i}>
                 {col.map(({ link, text }) => (
                   <li key={text}>
-                    <a href={link}>{text}</a>
+                    <Link to={link} offset={-80} href={link}>
+                      {text}
+                    </Link>
                   </li>
                 ))}
               </ul>

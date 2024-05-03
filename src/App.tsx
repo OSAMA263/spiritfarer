@@ -30,7 +30,7 @@ function App() {
 }
 
 const Container = tw.div`
-sm:space-y-28
+sm:space-y-24
 space-y-10
 `;
 

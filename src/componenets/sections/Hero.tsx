@@ -6,7 +6,6 @@ import {
   RiShieldCheckLine,
   RiVipDiamondLine,
 } from "react-icons/ri";
-
 import { Section } from "../../shared/Section";
 import { RevealElement } from "../../utilities/RevealElement";
 

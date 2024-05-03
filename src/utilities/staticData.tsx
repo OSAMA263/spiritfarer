@@ -163,17 +163,17 @@ const ReviewsData = [
 const FooterLinks = [
   [
     { link: "/", text: "Home" },
-    { link: "#what-we-do", text: "What we do" },
-    { link: "#who-is-it-for", text: "Who is it for" },
+    { link: "what-we-do", text: "What we do" },
+    { link: "who-is-it-for", text: "Who is it for" },
   ],
   [
-    { link: "#workflow", text: "Workflow" },
-    { link: "#pricing", text: "Pricing" },
-    { link: "#students", text: "Students" },
+    { link: "workflow", text: "Workflow" },
+    { link: "pricing", text: "Pricing" },
+    { link: "students", text: "Students" },
   ],
   [
-    { link: "#faq", text: "FAQ" },
-    { link: "#contact", text: "Contact" },
+    { link: "faq", text: "FAQ" },
+    { link: "contact", text: "Contact" },
   ],
 ];
 export {

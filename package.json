@@ -1,6 +1,7 @@
 {
   "name": "worthless",
   "private": true,
+  "homepage": "https://osama263.github.io/spiritfarer/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
