@@ -33,12 +33,12 @@ export const WhatWeDo = () => {
             <div className="space-y-10">
               <div className="grid grid-cols-2 sm:gap-12 gap-6">
                 <div className="md:space-y-8 space-y-4">
-                  <img src="/customers-img1.webp" alt="img1" />
+                  <img src="./customers-img1.webp" alt="img1" />
                   <h1 className="sm:text-4xl text-3xl font-semibold">
                     why should you learn facilitation and design spirnt?
                   </h1>
                 </div>
-                <img src="/customers-img2.webp" alt="img2" />
+                <img src="./customers-img2.webp" alt="img2" />
               </div>
               {/* animate the text from opacity .5 top 1 when you scroll? */}
               <TextOpacity />

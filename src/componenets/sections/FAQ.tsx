@@ -53,7 +53,7 @@ export const FAQ = () => {
 const SmallCard = () => {
   return (
     <Card>
-      <img src="/founderxdd.webp" alt="the founder" />
+      <img src="./founderxdd.webp" alt="the founder" />
       <h1 className="font-bold">
         “A Facilitator Helps Teams Accomplish More While Having a Great Time” -
         Shaan Livy

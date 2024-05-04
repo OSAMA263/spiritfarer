@@ -38,7 +38,7 @@ export const Hero = () => {
           {/* right image */}
           <div className="ms-auto max-lg:w-full max-lg:h-[600px]">
             <img
-              src="/hero-img.webp"
+              src="./hero-img.webp"
               className="w-full h-full bg-top"
               alt="hero-image"
             />

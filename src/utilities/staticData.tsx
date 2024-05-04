@@ -49,52 +49,52 @@ const CardsData = [
 ];
 // ------------what we do
 const LogosData: string[] = [
-  "/logo1.webp",
-  "/logo2.webp",
-  "/logo3.webp",
-  "/logo4.webp",
-  "/logo5.webp",
-  "/logo6.webp",
+  "./logo1.webp",
+  "./logo2.webp",
+  "./logo3.webp",
+  "./logo4.webp",
+  "./logo5.webp",
+  "./logo6.webp",
 ];
 const SliderImgsData: string[][] = [
   [
-    "/slider/img0.webp",
-    "/slider/img1.webp",
-    "/slider/img2.webp",
-    "/slider/img3.webp",
-    "/slider/img4.webp",
-    "/slider/img0.webp",
-    "/slider/img5.webp",
+    "./slider/img0.webp",
+    "./slider/img1.webp",
+    "./slider/img2.webp",
+    "./slider/img3.webp",
+    "./slider/img4.webp",
+    "./slider/img0.webp",
+    "./slider/img5.webp",
   ],
   [
-    "/slider/img6.webp",
-    "/slider/img7.webp",
-    "/slider/img8.webp",
-    "/slider/img9.webp",
-    "/slider/img10.webp",
-    "/slider/img6.webp",
-    "/slider/img11.webp",
+    "./slider/img6.webp",
+    "./slider/img7.webp",
+    "./slider/img8.webp",
+    "./slider/img9.webp",
+    "./slider/img10.webp",
+    "./slider/img6.webp",
+    "./slider/img11.webp",
   ],
 ];
 // -------------workflow
 const WorkflowGrid = [
   {
-    img: "/workflow/img0.webp",
+    img: "./workflow/img0.webp",
     title: "Problem Exploration",
     text: "Welcome to the Design Sprint, where we embark on a whirlwind journey to transform your ideas into tangible solutions. Day 1 is all about defining the problem you're trying to solve, delving into the depths of user needs, and identifying the pain points that need addressing.",
   },
   {
-    img: "/workflow/img1.webp",
+    img: "./workflow/img1.webp",
     title: "Ideation Extravaganza",
     text: "Now that we've identified the problem, let's unleash the creative floodgates! Day 2 is all about generating a plethora of ideas, brainstorming solutions that will address the pain points and enhance the user experience.",
   },
   {
-    img: "/workflow/img2.webp",
+    img: "./workflow/img2.webp",
     title: "Prototype Power Hour",
     text: "It's time to transform those brilliant ideas into tangible prototypes, bridging the gap between imagination and reality. Day 3 is all about sketching out your concepts, creating rough drafts, and visualizing the potential solutions you've come up with.",
   },
   {
-    img: "/workflow/img3.webp",
+    img: "./workflow/img3.webp",
     title: "Validate Your Ideas",
     text: "Embark on a user testing expedition, putting your prototypes to the ultimate test. Gather insights from actual users, observing their interactions and reactions as they navigate your prototype.",
   },
@@ -135,7 +135,7 @@ const ReviewsData = [
   {
     opinion:
       "I'm so grateful for this training. It's helped me to become a better designer.",
-    avatar: "/students/avatar1.webp",
+    avatar: "./students/avatar1.webp",
     name: "Jonathan Clamer",
     role: "VP @ AirMaster",
     backgroundColor: "#efe1ff",
@@ -143,7 +143,7 @@ const ReviewsData = [
   },
   {
     opinion: "I'm seeing a huge difference in the quality of our products",
-    avatar: "/students/avatar2.webp",
+    avatar: "./students/avatar2.webp",
     name: "Valerie Auburn",
     role: "Design Director @Soundbreeze",
     backgroundColor: "#dae4fb",
@@ -152,7 +152,7 @@ const ReviewsData = [
   {
     opinion:
       "I'm now able to lead design sprints that are both productive and fun",
-    avatar: "/students/avatar3.webp",
+    avatar: "./students/avatar3.webp",
     name: "Vincent Blair",
     role: "Product Designer @Assos",
     backgroundColor: "#fffbdc",

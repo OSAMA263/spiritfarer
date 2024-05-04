@@ -10,7 +10,7 @@ export const Footer = () => {
         <div className="sm:flex justify-between max-sm:space-y-6 mb-20">
           <div>
             <a href="#/" className="text-2xl font-bold">
-              <img src="/logo.svg" alt="logo" />
+              <img src="./logo.svg" alt="logo" />
             </a>
             <h1>Unleash the power of design sprints.</h1>
           </div>
